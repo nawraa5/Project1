@@ -1,0 +1,54 @@
+.start-btn{
+
+    bottom: 80px;
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+}
+
+img{
+    background-position: center;
+    background-size: cover;
+}
+
+*{
+    margin:0;
+}
+
+
+.color-choice{
+    height:100px;
+    width:100px;
+    border-radius: 50%;
+}
+
+#color-1{
+    background-color:red;
+}
+
+#color-2{
+    background-color:yellow;
+
+}
+
+#color-3{
+    background-color:blue;
+
+}
+#color-4{
+    background-color:green;
+
+}
+#color-5{
+    background-color:white;
+    
+
+}
+#color-6{
+    background-color:black;
+
+}
+
+
