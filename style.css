@@ -1,4 +1,4 @@
-.start-btn{
+#start-btn{
 
     bottom: 80px;
     width: 90px;
@@ -50,5 +50,13 @@ img{
     background-color:black;
 
 }
+
+
+#target-color{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
 
 

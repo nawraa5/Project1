@@ -24,22 +24,63 @@ const questions = [
         color:'Purple',
         firstColor:'blue',
         secondColor:'red'
-    },
-    {
-        color:'Gold',
-        firstColor:'yellow',
-        secondColor:'brown'
     }
 ]
 
 const buttonElement = document.querySelector('#start-btn')
+const targetColorElement = document.querySelector('#target-color')
+const colorChoices= document.querySelectorAll('.color-choice')
+
+let firstColor;
+let secondColor;
+let currentQuestion;
+
 
 function startGame(){
-    console,console.log('start Game');
-    
+  console.log('start Game');
+
+  const randomColor = Math.floor(Math.random()*questions.length);
+  currentQuestion = questions[randomColor];
+  console.log(currentQuestion);
+
+    targetColorElement.style.backgroundColor= currentQuestion.color;
 }
 
-buttonElement.addEventListener('click',startGame)
 
 
 
+colorChoices.forEach(function(colorChoice){
+
+    colorChoice.addEventListener('click', function(){
+       
+        const selectedColor = colorChoice.dataset.color;
+        
+        if(!firstColor){
+            firstColor=selectedColor;
+            console.log('First color:',firstColor);
+        }
+
+        else{
+            secondColor=selectedColor;
+            console.log('Second color :',secondColor);
+
+            if(
+                (firstColor === currentQuestion.firstColor && 
+                    secondColor === currentQuestion.secondColor) ||
+
+                (secondColor === currentQuestion.secondColor && 
+                    firstColor === currentQuestion.firstColor)){
+                    
+                        console.log('Correct !');
+                    }
+
+                    else{
+                        console.log('Wrong !');
+                    }
+                }
+            
+        }
+});
+
+
+buttonElement.addEventListener('click',startGame);
