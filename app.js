@@ -1,22 +1,22 @@
 const questions = [
     {
-        color: 'green',
+        color: 'Green',
         firstColor:'yellow',
         secondColor:'blue',
        
     },
     {
-        color:'grey',
+        color:'Grey',
         firstColor: 'white',
         secondColor: 'black'
     },
     {
-        color:'pink',
+        color:'Pink',
         firstColor:'red',
         secondColor:'white'
     },
     {
-        color: 'orange',
+        color: 'Orange',
         firstColor: 'red',
         secondColor: 'yellow'
     },
@@ -24,7 +24,46 @@ const questions = [
         color:'Purple',
         firstColor:'blue',
         secondColor:'red'
+    },
+    {
+        color:'Light yellow',
+        firstColor:'yellow',
+        secondColor:'white'
+    },
+    {
+        color:'Light green',
+        firstColor:'green',
+        secondColor:'white'
+    },
+    {
+        color:'Light blue',
+        firstColor:'blue',
+        secondColor:'white'
+    },
+    {
+        color:'Navy Blue',
+        firstColor:'blue',
+        secondColor:'black'
+    },
+    {
+        color:'Maroon',
+        firstColor:'red',
+        secondColor:'black'
+    },
+    {
+        color:'Brown',
+        firstColor:'green',
+        secondColor:'red'
+    },
+    {
+        color:'olive',
+        firstColor:'yellow',
+        secondColor:'black'
     }
+
+    
+
+
 ]
 
 const buttonElement = document.querySelector('#start-btn');
