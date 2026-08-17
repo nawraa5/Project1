@@ -2,7 +2,10 @@
 
     width: 90px;
     height: 90px;
+
     border-radius: 50%;
+    border: none;
+
     margin-top: 30px;
     font-size: 25px;
 }
@@ -14,6 +17,7 @@ img{
 
 *{
     margin:0;
+    box-sizing: border-box;
 }
 
 
@@ -28,7 +32,6 @@ img{
     display:grid;
     grid-template-columns: repeat(3,  1fr);
     gap:20px;
-    text-align: center;
 }
 
 #color-1{
@@ -67,12 +70,34 @@ img{
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin: 10px;
+    margin: 20px auto;
     border:3px;
+    
 }
 
 
 
 body{
-    background-color: azure;
+    background-color: rgb(193, 232, 206);
+    font-family: Arial, sans-serif;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+h1{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+
+.game-container{
+    width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
 }
