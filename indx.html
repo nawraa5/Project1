@@ -7,18 +7,26 @@
     <script defer src="./app.js"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <img src="" alt="the game background">
+    <div class="game-container">
+
+        <h1>Color Mixer</h1>
+
+        <div class="game-info">
+            <p id="score">Score: 0</p>
+            <div id="time">Time:20</div>
+        </div>
+
+        <p class="instructions">Choose two colors to make the target color :</p>
 
 
-    <img class="color" src="">
-    <img class="color" src="">
-    <img class="color" src="">
-    <img class="color" src="">
-
-
+    <h2>Make this color !</h2>
+    
     <div id="target-color"></div>
+    <p id="result"></p>
 
+    <div class="color-choices">
     <div id="color-1" class="color-choice" data-color="red"></div>
     <div id="color-2" class="color-choice" data-color="yellow"></div>
     <div id="color-3" class="color-choice" data-color="blue"></div>
@@ -26,11 +34,10 @@
     <div id="color-5" class="color-choice" data-color="white"></div>
     <div id="color-6" class="color-choice" data-color="black"></div>
 
+    </div>
 
 
-    
-
-
-    <button id="start-btn"> ▶ </button>
+     <button id="start-btn"> ▶ </button>
+   
 </body>
 </html>
