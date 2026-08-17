@@ -1,193 +1,203 @@
 const questions = [
     {
-        color: 'Green',
-        firstColor:'yellow',
-        secondColor:'blue',
-       
+        color: 'green',
+        firstColor: 'yellow',
+        secondColor: 'blue',
+
     },
     {
-        color:'Grey',
+        color: 'grey',
         firstColor: 'white',
         secondColor: 'black'
     },
     {
-        color:'Pink',
-        firstColor:'red',
-        secondColor:'white'
+        color: 'pink',
+        firstColor: 'red',
+        secondColor: 'white'
     },
     {
-        color: 'Orange',
+        color: 'orange',
         firstColor: 'red',
         secondColor: 'yellow'
     },
     {
-        color:'Purple',
-        firstColor:'blue',
-        secondColor:'red'
+        color: 'purple',
+        firstColor: 'blue',
+        secondColor: 'red'
     },
     {
-        color:'Light yellow',
-        firstColor:'yellow',
-        secondColor:'white'
+        color: 'khaki',
+        firstColor: 'yellow',
+        secondColor: 'white'
     },
     {
-        color:'Light green',
-        firstColor:'green',
-        secondColor:'white'
+        color: 'lightgreen',
+        firstColor: 'green',
+        secondColor: 'white'
     },
     {
-        color:'Light blue',
-        firstColor:'blue',
-        secondColor:'white'
+        color: 'lightblue',
+        firstColor: 'blue',
+        secondColor: 'white'
     },
     {
-        color:'Navy Blue',
-        firstColor:'blue',
-        secondColor:'black'
+        color: 'navyblue',
+        firstColor: 'blue',
+        secondColor: 'black'
     },
     {
-        color:'Maroon',
-        firstColor:'red',
-        secondColor:'black'
+        color: 'maroon',
+        firstColor: 'red',
+        secondColor: 'black'
     },
     {
-        color:'Brown',
-        firstColor:'green',
-        secondColor:'red'
+        color: 'brown',
+        firstColor: 'green',
+        secondColor: 'red'
     },
     {
-        color:'olive',
-        firstColor:'yellow',
-        secondColor:'black'
+        color: 'olive',
+        firstColor: 'yellow',
+        secondColor: 'black'
     }
-
-    
-
 
 ]
 
 const buttonElement = document.querySelector('#start-btn');
 const targetColorElement = document.querySelector('#target-color');
-const colorChoices= document.querySelectorAll('.color-choice');
+const colorChoices = document.querySelectorAll('.color-choice');
 const resaultElement = document.querySelector('#result');
-const scoreElement= document.querySelector('#score');
-const timeElement= document.querySelector('#time');
+const scoreElement = document.querySelector('#score');
+const timeElement = document.querySelector('#time');
 
 
 let firstColor;
 let secondColor;
 let currentQuestion;
-let score=0;
-let time =20;
+let score = 0;
+let time = 20;
 let timer;
 let gameActive = false;
+let lastQuestionIndex = -1;
 
 
 
-function startGame(){
-  console.log('start Game');
+function startGame() {
+    console.log('start Game');
 
-  gameActive= true;
-  firstColor=null;
-  secondColor=null;
+    gameActive = true;
+    firstColor = null;
+    secondColor = null;
 
-  const randomColor = Math.floor(Math.random()*questions.length);
-  currentQuestion = questions[randomColor];
-  console.log(currentQuestion);
+    let randomColor = Math.floor(Math.random() * questions.length);
 
-  targetColorElement.style.backgroundColor= currentQuestion.color;
-  
-  startTimer();
+    while (randomColor === lastQuestionIndex) {
+        randomColor = Math.floor(Math.random() * questions.length);
+    }
+
+    lastQuestionIndex = randomColor;
+    currentQuestion = questions[randomColor];
+
+    console.log(currentQuestion);
+
+    targetColorElement.style.backgroundColor = currentQuestion.color;
+
+    startTimer();
 }
 
 
 
 
-colorChoices.forEach(function(colorChoice){
+colorChoices.forEach(function (colorChoice) {
 
-    colorChoice.addEventListener('click', function(){
-        if(!gameActive){
+    colorChoice.addEventListener('click', function () {
+        if (!gameActive) {
             return;
         }
 
         const selectedColor = colorChoice.dataset.color;
-        
-        if(!firstColor){
-            firstColor=selectedColor;
-            console.log('First color:',firstColor);
+
+        if (!firstColor) {
+            firstColor = selectedColor;
+            console.log('First color:', firstColor);
         }
 
-        else{
-            secondColor=selectedColor;
-            console.log('Second color :',secondColor);
+        else {
+            secondColor = selectedColor;
+            console.log('Second color :', secondColor);
 
-            if(
-                (firstColor === currentQuestion.firstColor && 
+            if (
+                (firstColor === currentQuestion.firstColor &&
                     secondColor === currentQuestion.secondColor) ||
 
-                (firstColor === currentQuestion.secondColor && 
-                    secondColor === currentQuestion.firstColor)){
-                    
-                        resaultElement.textContent='Correct !';
-                        score+=100;
-                        scoreElement.textContent=`Score: ${score}`;
+                (firstColor === currentQuestion.secondColor &&
+                    secondColor === currentQuestion.firstColor)) {
 
-                        setTimeout(function(){
-                        resaultElement.textContent=''
-                        startGame();
+                resaultElement.textContent = 'Correct !';
+                score += 100;
+                scoreElement.textContent = `Score: ${score}`;
 
-                    }, 1000);
+                setTimeout(function () {
+                    resaultElement.textContent = ''
+                    startGame();
 
-                    }
+                }, 1000);
 
-                    else{
-                        resaultElement.textContent='Wrong !';
-
-                        setTimeout(function(){
-                        resaultElement.textContent=''
-                        
-                        
-
-                    }, 1000);
-
-
-                    }
-
-                    
-
-                    firstColor=null;
-                    secondColor=null;
-                }
             }
-        )
+
+            else {
+                resaultElement.textContent = 'Wrong !';
+
+                setTimeout(function () {
+                    resaultElement.textContent = ''
+
+
+
+                }, 1000);
+
+
+            }
+
+
+
+            firstColor = null;
+            secondColor = null;
         }
+    }
+    )
+}
 );
 
 
-function startTimer(){
+function startTimer() {
     clearInterval(timer);
 
-    time=20;
-    timer= setInterval(function(){
+    time = 20;
+    timer = setInterval(function () {
         time--;
 
-        timeElement.textContent='Time:'+time;
+        timeElement.textContent = 'Time:' + time;
 
-        if(time ===0){
+        if (time === 0) {
             clearInterval(timer);
-            gameActive=false;
-            resaultElement.textContent='Time Up !';
-            setTimeout(function(){
-            resaultElement.textContent='';
-           
-        
-    }, 1000 );
+            gameActive = false;
+
+            score = 0;
+            scoreElement.textContent='Score:'+score;
             
+            resaultElement.textContent = 'Time Up !';
+
+            setTimeout(function () {
+                resaultElement.textContent = '';
+
+
+            }, 1000);
+
+        }
+
+    }, 1000);
 }
 
-    },1000);
-}
 
 
-
-buttonElement.addEventListener('click',startGame);
+buttonElement.addEventListener('click', startGame);
