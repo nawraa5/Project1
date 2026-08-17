@@ -49,10 +49,6 @@ function startGame(){
   console.log('start Game');
 
   gameActive= true;
-
-  score=0;
-  scoreElement.textContent=`Score: ${score}`;
-
   firstColor=null;
   secondColor=null;
 
@@ -111,6 +107,7 @@ colorChoices.forEach(function(colorChoice){
                         setTimeout(function(){
                         resaultElement.textContent=''
                         
+                        
 
                     }, 1000);
 
@@ -141,7 +138,6 @@ function startTimer(){
             clearInterval(timer);
             gameActive=false;
             resaultElement.textContent='Time Up !';
-            
             setTimeout(function(){
             resaultElement.textContent='';
            
