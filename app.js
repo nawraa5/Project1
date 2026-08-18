@@ -82,6 +82,7 @@ let lastQuestionIndex = -1;
 
 
 
+
 function startGame() {
     console.log('start Game');
 
@@ -146,7 +147,9 @@ colorChoices.forEach(function (colorChoice) {
             }
 
             else {
+                
                 resaultElement.textContent = 'Wrong !';
+
 
                 setTimeout(function () {
                     resaultElement.textContent = ''
