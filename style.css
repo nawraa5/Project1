@@ -15,7 +15,6 @@ body{
     width: 100%;
     padding: 30px;
     min-height: auto;
-    box-sizing: border-box;
     border-radius: 20px;
     text-align: center;
     font-size: 20px;
@@ -37,6 +36,8 @@ body{
 
     transition: transform 0.2s ease;
     background-color: aliceblue;
+
+    cursor: pointer;
 }
 
 #start-btn:hover{
@@ -117,7 +118,7 @@ h1{
     font-size: 80px;
     text-align: center;
     font-weight:900;
-    bottom: 20px;
+
 }
 
 h2{
@@ -129,17 +130,6 @@ h2{
 
 }
 
-
-.game-container{
-    width: 100%;
-    padding: 30px;
-    min-height: auto;
-    box-sizing: border-box;
-    border-radius: 20px;
-    text-align: center;
-    font-size: 20px;
-
-}
 
 
 #result{
@@ -156,12 +146,13 @@ h2{
     font-size: 24px;
     font-weight: 600;
 
-    color:rgb(183, 222, 224);
+    color:rgb(50,90, 80);
+    background-color: rgba(255,255,255,0.7);
+    
     text-align: center;
-
     margin: 15px auto 25px;
     letter-spacing: 1px;
-    background-color: rgba(255,255,255,0.7);
+   
 
     padding: 12px 25px;
     border-radius: 15px;

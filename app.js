@@ -75,7 +75,7 @@ let firstColor;
 let secondColor;
 let currentQuestion;
 let score = 0;
-let time =10;
+let time = 10;
 let timer;
 let gameActive = false;
 let lastQuestionIndex = -1;
@@ -134,7 +134,7 @@ colorChoices.forEach(function (colorChoice) {
                 (firstColor === currentQuestion.secondColor &&
                     secondColor === currentQuestion.firstColor)) {
 
-                resultElement.textContent = 'Correct !';
+                resultElement.textContent = 'Correct!';
                 score += 100;
                 scoreElement.textContent = `Score: ${score}`;
 
@@ -148,7 +148,7 @@ colorChoices.forEach(function (colorChoice) {
 
             else {
                 
-                resultElement.textContent = 'Wrong !';
+                resultElement.textContent = 'Wrong!';
 
 
                 setTimeout(function () {
@@ -176,19 +176,21 @@ function startTimer() {
     clearInterval(timer);
 
     time = 10;
+    timeElement.textContent = 'Time: ' + time;
+
     timer = setInterval(function () {
         time--;
 
-        timeElement.textContent = 'Time:' + time;
+        timeElement.textContent = 'Time: ' + time;
 
         if (time === 0) {
             clearInterval(timer);
             gameActive = false;
 
             score = 0;
-            scoreElement.textContent='Score:'+score;
+            scoreElement.textContent='Score: '+ score;
             
-            resultElement.textContent = 'Time Up !';
+            resultElement.textContent = 'Time Up!';
 
             setTimeout(function () {
                 resultElement.textContent = '';
@@ -203,4 +205,8 @@ function startTimer() {
 
 
 
-buttonElement.addEventListener('click', startGame);
+buttonElement.addEventListener('click', function() {
+    if(!gameActive){
+        startGame();
+    }
+});
