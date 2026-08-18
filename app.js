@@ -75,7 +75,7 @@ let firstColor;
 let secondColor;
 let currentQuestion;
 let score = 0;
-let time = 20;
+let time =10;
 let timer;
 let gameActive = false;
 let lastQuestionIndex = -1;
@@ -172,7 +172,7 @@ colorChoices.forEach(function (colorChoice) {
 function startTimer() {
     clearInterval(timer);
 
-    time = 20;
+    time = 10;
     timer = setInterval(function () {
         time--;
 
