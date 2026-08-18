@@ -10,29 +10,29 @@
     font-size: 25px;
 }
 
-img{
-    background-position: center;
-    background-size: cover;
-}
 
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 
 .color-choice{
-    height:100px;
-    width:100px;
+    height:150px;
+    width: 150px;
     border-radius: 50%;
     margin:20px;
 }
 
 .color-choices{
+    width: 500px;
+    margin: 30px auto;
+
     display:grid;
-    grid-template-columns: repeat(3,  1fr);
-    gap:20px;
+    grid-template-columns: repeat(3,  150px);
+    gap:25px;
 }
 
 #color-1{
@@ -68,11 +68,12 @@ img{
 }
 
 #target-color{
-    width: 150px;
-    height: 150px;
+    
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     margin: 20px auto;
-    border:3px;
+    
     
 }
 html,body{
@@ -81,21 +82,25 @@ html,body{
 }
 
 
- body{
+body{
     background-color: rgb(193, 232, 206);
-    font-family: Arial, sans-serif;
-
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  
 }
 
 
 h1{
-    font-size: 40px;
+    font-size: 80px;
+    text-align: center;
+    font-weight:900;
+    bottom: 20px;
+}
+
+h2{
+    font-size:40px;
+    text-align: center;
+    font-weight: 600;
     
+
 }
 
 
@@ -106,4 +111,37 @@ h1{
     box-sizing: border-box;
     border-radius: 20px;
     text-align: center;
+
 }
+
+
+#result{
+    font-size: 35px;
+    font-weight: 900;
+
+    margin-top: 25px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.instructions{
+    font-size: 24px;
+    font-weight: 600;
+
+    color:rgb(183, 222, 224);
+    text-align: center;
+
+    margin: 15px auto 25px;
+    letter-spacing: 1px;
+    background-color: rgba(255,255,255,0.7);
+
+    padding: 12px 25px;
+    border-radius: 15px;
+
+    width: fit-content;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+
