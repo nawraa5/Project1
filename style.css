@@ -74,6 +74,7 @@
 
 .color-choice:hover{
     transform: scale(1.1);
+    border: 2px dashed black ;
 }
 
 #target-color{
