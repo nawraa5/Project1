@@ -66,7 +66,7 @@ const questions = [
 const buttonElement = document.querySelector('#start-btn');
 const targetColorElement = document.querySelector('#target-color');
 const colorChoices = document.querySelectorAll('.color-choice');
-const resaultElement = document.querySelector('#result');
+const resultElement = document.querySelector('#result');
 const scoreElement = document.querySelector('#score');
 const timeElement = document.querySelector('#time');
 
@@ -134,12 +134,12 @@ colorChoices.forEach(function (colorChoice) {
                 (firstColor === currentQuestion.secondColor &&
                     secondColor === currentQuestion.firstColor)) {
 
-                resaultElement.textContent = 'Correct !';
+                resultElement.textContent = 'Correct !';
                 score += 100;
                 scoreElement.textContent = `Score: ${score}`;
 
                 setTimeout(function () {
-                    resaultElement.textContent = ''
+                    resultElement.textContent = ''
                     startGame();
 
                 }, 1000);
@@ -148,11 +148,11 @@ colorChoices.forEach(function (colorChoice) {
 
             else {
                 
-                resaultElement.textContent = 'Wrong !';
+                resultElement.textContent = 'Wrong !';
 
 
                 setTimeout(function () {
-                    resaultElement.textContent = ''
+                    resultElement.textContent = ''
 
 
 
@@ -188,10 +188,10 @@ function startTimer() {
             score = 0;
             scoreElement.textContent='Score:'+score;
             
-            resaultElement.textContent = 'Time Up !';
+            resultElement.textContent = 'Time Up !';
 
             setTimeout(function () {
-                resaultElement.textContent = '';
+                resultElement.textContent = '';
 
 
             }, 1000);
