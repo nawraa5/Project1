@@ -41,7 +41,7 @@ const questions = [
         secondColor: 'white'
     },
     {
-        color: 'navyblue',
+        color: 'navy',
         firstColor: 'blue',
         secondColor: 'black'
     },
