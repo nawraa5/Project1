@@ -138,6 +138,9 @@ colorChoices.forEach(function (colorChoice) {
                 score += 100;
                 scoreElement.textContent = `Score: ${score}`;
 
+                clearInterval(timer);
+                gameActive= false;
+
                 setTimeout(function () {
                     resultElement.textContent = ''
                     startGame();
@@ -188,7 +191,7 @@ function startTimer() {
             gameActive = false;
 
             score = 0;
-            scoreElement.textContent='Score: '+ score;
+            scoreElement.textContent= 'Score: '+ score;
             
             resultElement.textContent = 'Time Up!';
 
